@@ -54,12 +54,12 @@ _By default,_ __ReactDOM.render(...)__ _function takes only 1 element, however i
 
 ```
 ReactDOM.render(
-	<div>
-		<h1>Hello world!</h1>
-		<br/>
-		<h2>A ReactJS Application</h2>
-	</div>,
-	document.getElementById('root')
+ <div>
+  <h1>Hello world!</h1>
+  <br/>
+  <h2>A ReactJS Application</h2>
+ </div>,
+ document.getElementById('root')
 );
 ```
 _We can render almost anything using the above function but in all ReactJS applications, we render_ __Components__ _instead of individual HTML elements.
@@ -79,15 +79,15 @@ _As stated earlier, each ReactJS components comes with a single_ __render(...)__
 
 ```
 class FirstReactComponent extends React.Component {
-	render() {
-		return(
-			<div>
-				<h1>Hello world!</h1>
-				<br/>
-				<h2>A ReactJS Application</h2>
-			</div>
-			);
-	}
+render() {
+ return(
+  <div>
+   <h1>Hello world!</h1>
+   <br/>
+   <h2>A ReactJS Application</h2>
+  </div>
+  );
+ }
 }
 
 ```
@@ -109,30 +109,30 @@ _Any functional react application will have more than one component, however the
 
 ```
 class SecondReactComponent extends React.Component {
-      render() {
-        return(
-          <h2>I am 2nd React Component </h2>
-        );
-      }
-    }
+ render() {
+  return(
+   <h2>I am 2nd React Component </h2>
+  );
+ }
+}
  class FirstReactComponent extends React.Component {
-      render() {
-        return (
-          <div>
-        		<h1>Hello world!</h1>
-        		<br/>
-        		<h2>A ReactJS Application from Component</h2>
-        	</div>
-        );
-      }
-    }
+render() {
+ return (
+  <div>
+   <h1>Hello world!</h1>
+   <br/>
+   <h2>A ReactJS Application from Component</h2>
+  </div>
+  );
+ }
+}
 
-    ReactDOM.render(<div>
-        <FirstReactComponent/>
-        <SecondReactComponent/>
-        </div> ,
-	document.getElementById('root')); 
-  
+ReactDOM.render(<div>
+  <FirstReactComponent/>
+  <SecondReactComponent/>
+ </div> ,
+ document.getElementById('root')); 
+
 ```
 
 ## 1.7 - Rendering 1 ReactJS component inside another
@@ -140,27 +140,30 @@ class SecondReactComponent extends React.Component {
 _Each ReactJS component can have only one_ __render(...)__ _function, however this doesn't prevent us from calling another component_ __render(..)__ _function inside it. The code with exact same behaviour can be replicated by calling_ __SecondReactComponent__ from inside __FirstReactComponent__
 
 ```
-  class SecondReactComponent extends React.Component {
-      render() {
-        return(
-          <h2>I am 2nd React Component </h2>
-        );
-      }
-    }
+ class SecondReactComponent extends React.Component {
+  render() {
+   return(
+    <h2>I am 2nd React Component </h2>
+   );
+  }
+}
 
-    class FirstReactComponent extends React.Component {
-      render() {
-        return (
-          <div>
-        		<h1>Hello world!</h1>
-        		<h2>A ReactJS Application from Component</h2>
-            <SecondReactComponent/>
-        	</div>
-        );
-      }
-    }
+class FirstReactComponent extends React.Component {
+ render() {
+  return (
+   <div>
+    <h1>Hello world!</h1>
+    <h2>A ReactJS Application from Component</h2>
+    <SecondReactComponent/>
+   </div>
+  );
+ }
+}
 
-    ReactDOM.render(<FirstReactComponent/>,	document.getElementById('root'));
+ReactDOM.render(<FirstReactComponent/>,	document.getElementById('root'));
    
-   ```
+  ```
+## 1.8 - Summary
+
+_Components are basic building blocks of ReactJS applications. Components can be nested to create parent child relationship or can be clubbed inside <div> within the render function_
 
