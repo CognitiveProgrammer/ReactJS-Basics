@@ -72,9 +72,9 @@ __Note : We'll be using ES6 syntax for components. ReactJS components can be cre
 _We can create a ReactJS component using ES6 class syntax as_
 
 ```
-```
 class FirstReactComponent extends React.Component {
 }
+```
 _As stated earlier, each ReactJS components comes with a single_ __render(...)__ _function which means all app related rendering elements shall be embedded inside this function. We can write the function as_
 
 ```
@@ -92,3 +92,75 @@ class FirstReactComponent extends React.Component {
 
 ```
 _So we have a ReactJS component which is capable of rendering a 'h1' and an 'h2' tag_
+
+## 1.5 - Rendering ReactJS Components inside HTML
+
+_With_ __FirstReactComponent__ _we have a react component with a_ __render()__ _function which contains the stuffs that need to be rendered. We render ReactJS components in the same way as we render any native HTML components._
+
+_To render ReactJS component, we'll use the following syntax in_ __ReactDOM.render(...)__ _function_
+
+```
+ReactDOM.render(<FirstReactComponent/>, document.getElementById('root'));
+```
+
+## 1.6 - Creating Multiple Components
+
+_Any functional react application will have more than one component, however there is only one_ __ReactDOM.render(...)__ _function. This function can have multiple components wrapped inside <div></div>_
+
+```
+class SecondReactComponent extends React.Component {
+      render() {
+        return(
+          <h2>I am 2nd React Component </h2>
+        );
+      }
+    }
+ class FirstReactComponent extends React.Component {
+      render() {
+        return (
+          <div>
+        		<h1>Hello world!</h1>
+        		<br/>
+        		<h2>A ReactJS Application from Component</h2>
+        	</div>
+        );
+      }
+    }
+
+    ReactDOM.render(<div>
+        <FirstReactComponent/>
+        <SecondReactComponent/>
+        </div> ,
+	document.getElementById('root')); 
+  
+```
+
+## 1.7 - Rendering 1 ReactJS component inside another
+
+_Each ReactJS component can have only one_ __render(...)__ _function, however this doesn't prevent us from calling another component_ __render(..)__ _function inside it. The code with exact same behaviour can be replicated by calling_ __SecondReactComponent__ from inside __FirstReactComponent__
+
+```
+  class SecondReactComponent extends React.Component {
+      render() {
+        return(
+          <h2>I am 2nd React Component </h2>
+        );
+      }
+    }
+
+    class FirstReactComponent extends React.Component {
+      render() {
+        return (
+          <div>
+        		<h1>Hello world!</h1>
+        		<h2>A ReactJS Application from Component</h2>
+            <SecondReactComponent/>
+        	</div>
+        );
+      }
+    }
+
+    ReactDOM.render(<FirstReactComponent/>,	document.getElementById('root'));
+   
+   ```
+
