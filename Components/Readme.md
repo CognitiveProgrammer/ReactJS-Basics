@@ -50,7 +50,7 @@ __ReactDOM__ _is react representation of HTML DOM which put the contents into th
 
 ## 1.3 - Including more than 1 HTML tags inside ReactDOM.render(...)
 
-_By default,_ __ReactDOM.render(...)__ _function takes only 1 element, however its possible to provide more than one element inside by enclosing the tage within <DIV></DIV>. For example, we can have_
+_By default,_ __ReactDOM.render(...)__ _function takes only 1 element, however its possible to provide more than one element inside by enclosing the tags within 'div'. For example, we can write the code as_
 
 ```
 ReactDOM.render(
@@ -105,7 +105,7 @@ ReactDOM.render(<FirstReactComponent/>, document.getElementById('root'));
 
 ## 1.6 - Creating Multiple Components
 
-_Any functional react application will have more than one component, however there is only one_ __ReactDOM.render(...)__ _function. This function can have multiple components wrapped inside <div></div>_
+_Any functional react application will have more than one component and all of them has to be rendered at some point of time. Since we use_ __ReactDOM.render(...)__ _function for rendering components, we can render multiple components wrapped inside 'div'_
 
 ```
 class SecondReactComponent extends React.Component {
@@ -173,7 +173,7 @@ ReactDOM.render(<SecondReactComponent/>, document.getElementById('root'));
 
 ```
 
-_it will override the_ __FirstReactComponent__ _and render the_ __SecondReactComponent__ _at the same <div>. i.e 'root'. To avoid the overriding problem we can create multiple <div> areas which can be rendered by multiple_ __ReactDOM.render(...)__ _functions. so we can change the HTML as_
+_it will override the_ __FirstReactComponent__ _and render the_ __SecondReactComponent__ _at the same 'div'. i.e 'root'. To avoid the overriding problem we can create multiple <div> areas which can be rendered by multiple_ __ReactDOM.render(...)__ _functions. so we can change the HTML to have two 'div' areas namely 'first' and 'second'_
 
 ```
 <body>
@@ -206,9 +206,9 @@ _it will override the_ __FirstReactComponent__ _and render the_ __SecondReactCom
   </body>
 
 ```
-_In this case, both 'First' and 'Second' <div> will be rendered._
+_In this case, both 'First' and 'Second' <div> will be rendered at their respective places in the HTML._
 
 ## 1.9 - Summary
 
-_Components are basic building blocks of ReactJS applications. Components can be nested to create parent child relationship or can be clubbed inside <div> within the render function_
+_Components are basic building blocks of ReactJS applications. Components can be nested to create parent child relationship or can be clubbed inside <div> within the render function._
 
