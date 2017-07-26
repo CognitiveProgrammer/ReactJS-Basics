@@ -1,4 +1,4 @@
-# ReactJS 1 - The Components
+# ReactJS : [1] - The Components
 
 __Components__ _are building blocks of all ReactJS applicatios and most of the ReactJS apps are made up of by combining different components._
 
@@ -163,7 +163,52 @@ class FirstReactComponent extends React.Component {
 ReactDOM.render(<FirstReactComponent/>,	document.getElementById('root'));
    
   ```
-## 1.8 - Summary
+## 1.8 - Multiple Usage of ReactDOM.render(...) function
+
+__ReactDOM.render(...)__ _function can be used multiple times as it works on the elements specified by_ __document.getElementById(...)__. _If we use it for the same element, then it will override the existing one. For example, if we use this function to render_ __SecondReactComponent__ _as_
+
+```
+ReactDOM.render(<FirstReactComponent/>, document.getElementById('root')); 
+ReactDOM.render(<SecondReactComponent/>, document.getElementById('root')); 
+
+```
+
+_it will override the_ __FirstReactComponent__ _and render the_ __SecondReactComponent__ _at the same <div>. i.e 'root'. To avoid the overriding problem we can create multiple <div> areas which can be rendered by multiple_ __ReactDOM.render(...)__ _functions. so we can change the HTML as_
+
+```
+<body>
+    <div id="First"></div>
+    <div id="Second"></div>
+    <script type="text/babel">
+    class SecondReactComponent extends React.Component {
+      render() {
+        return(
+          <h2>I am 2nd React Component </h2>
+        );
+      }
+    }
+
+    class FirstReactComponent extends React.Component {
+      render() {
+        return (
+          <div>
+            <h1>Hello world!</h1>
+            <h2>A ReactJS Application from Component</h2>
+            <SecondReactComponent/>
+          </div>
+         );
+      }
+    }
+
+    ReactDOM.render(<FirstReactComponent/>, document.getElementById('First')); 
+    ReactDOM.render(<SecondReactComponent/>, document.getElementById('Second')); 
+    </script>
+  </body>
+
+```
+_In this case, both 'First' and 'Second' <div> will be rendered._
+
+## 1.9 - Summary
 
 _Components are basic building blocks of ReactJS applications. Components can be nested to create parent child relationship or can be clubbed inside <div> within the render function_
 
