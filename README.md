@@ -13,6 +13,7 @@ _The scope of this tutorial is to explain the (3) main building blocks of any Re
 - ReactJS States
 
 [ [1] - ReactJS Components ](https://github.com/9lean/ReactJS-Basics/tree/master/Components)
+
 [ [2] - ReactJS Properties ](https://github.com/9lean/ReactJS-Basics/tree/master/Properties)
 
 
