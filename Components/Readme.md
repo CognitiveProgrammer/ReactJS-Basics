@@ -210,5 +210,5 @@ _In this case, both 'First' and 'Second' <div> will be rendered at their respect
 
 ## 1.9 - Summary
 
-_Components are basic building blocks of ReactJS applications. Components can be nested to create parent child relationship or can be clubbed inside <div> within the render function._
+_Components are basic building blocks of ReactJS applications. Components can be nested to create parent child relationship or can be clubbed inside 'div' within the render function._
 
